@@ -8,26 +8,45 @@ on:
       - master
 
 jobs:
+
   ubuntu-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Run on Ubuntu
-        run: echo "Running on Ubuntu..."
-      - name: Simulate Ubuntu Work
-        run: sleep 5
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print OS info
+        run: uname -a
+
+      - name: Create and display file
+        run: |
+          echo "Hello from Ubuntu" > ubuntu.txt
+          cat ubuntu.txt
 
   windows-job:
     runs-on: windows-latest
     steps:
-      - name: Run on Windows
-        run: echo "Running on Windows..."
-      - name: Simulate Windows Work
-        run: Start-Sleep -Seconds 5
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print OS info
+        run: systeminfo
+
+      - name: Create and display file
+        run: |
+          echo Hello from Windows > windows.txt
+          type windows.txt
 
   macos-job:
     runs-on: macos-latest
     steps:
-      - name: Run on macOS
-        run: echo "Running on macOS..."
-      - name: Simulate macOS Work
-        run: sleep 5
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print OS info
+        run: uname -a
+
+      - name: Create and display file
+        run: |
+          echo "Hello from macOS" > mac.txt
+          cat mac.txt
