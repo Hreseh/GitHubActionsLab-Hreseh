@@ -1,0 +1,8 @@
+## YAML Template.
+---
+name: Workflow 1 - Job Dependencies
+
+on:
+  push:
+    branches:
+      - main
