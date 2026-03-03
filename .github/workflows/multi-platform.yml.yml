@@ -1,0 +1,33 @@
+## YAML Template.
+---
+name: Workflow 2 - Multi Platform Testing
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  ubuntu-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run on Ubuntu
+        run: echo "Running on Ubuntu..."
+      - name: Simulate Ubuntu Work
+        run: sleep 5
+
+  windows-job:
+    runs-on: windows-latest
+    steps:
+      - name: Run on Windows
+        run: echo "Running on Windows..."
+      - name: Simulate Windows Work
+        run: timeout 5
+
+  macos-job:
+    runs-on: macos-latest
+    steps:
+      - name: Run on macOS
+        run: echo "Running on macOS..."
+      - name: Simulate macOS Work
+        run: sleep 5
