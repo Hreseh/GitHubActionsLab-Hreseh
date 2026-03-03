@@ -22,7 +22,7 @@ jobs:
       - name: Run on Windows
         run: echo "Running on Windows..."
       - name: Simulate Windows Work
-        run: timeout 5
+        run: Start-Sleep -Seconds 5
 
   macos-job:
     runs-on: macos-latest
