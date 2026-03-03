@@ -6,3 +6,30 @@ on:
   push:
     branches:
       - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Build
+        run: echo "Building application..."
+      - name: Simulate Build Process
+        run: sleep 5
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Testing
+        run: echo "Running tests..."
+      - name: Simulate Testing Process
+        run: sleep 5
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Deployment
+        run: echo "Deploying application..."
+      - name: Simulate Deployment Process
+        run: sleep 5
